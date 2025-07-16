@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import Sidebar from "./Sidebar";
 import Backdrop from "./Backdrop";
 import LogoIcon from "../assets/svg/Logo";
 import BurgerIcon from "../assets/svg/BurgerIcon";
+import { useTheme } from "./ThemeContext";
 
 export default function TopNavbar() {
-  const [y, setY] = useState(window.scrollY);
-  const [sidebarOpen, toggleSidebar] = useState(false);
+  const [y, setY] = React.useState(window.scrollY);
+  const [sidebarOpen, toggleSidebar] = React.useState(false);
+  const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => setY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -19,25 +21,46 @@ export default function TopNavbar() {
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <nav className={`fixed top-0 left-0 w-full z-[999] whiteBg animate transition-all duration-300 flexCenter`} style={{ height: y > 100 ? "60px" : "80px" }}>
+      <nav
+        className={`fixed top-0 left-0 w-full z-[999] whiteBg dark:bg-[#18181b] animate transition-all duration-300 flexCenter`}
+        style={{ height: y > 100 ? "60px" : "80px" }}
+      >
         <div className="container flexSpaceCenter relative h-full">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
           </Link>
-
-          <button onClick={() => toggleSidebar(!sidebarOpen)} className="pointer block md:hidden outline-none border-0 bg-transparent h-full px-[15px]">
+          <button
+            onClick={() => toggleSidebar(!sidebarOpen)}
+            className="pointer block md:hidden outline-none border-0 bg-transparent h-full px-[15px]"
+          >
             <BurgerIcon />
           </button>
-
           <ul className="flexCenter hidden md:flex">
-            {["home", "services", "projects", "blog", "pricing", "contact"].map((section) => (
-              <li key={section} className="semiBold font18 pointer">
-                <Link to={section} spy={true} smooth={true} offset={-80} activeClass="active" className="block px-[15px] py-[10px]">
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </Link>
-              </li>
-            ))}
+            {["home", "services", "projects", "blog", "pricing", "contact"].map(
+              (section) => (
+                <li key={section} className="semiBold font18 pointer">
+                  <Link
+                    to={section}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    activeClass="active"
+                    className="block px-[15px] py-[10px]"
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
+          {/* Night mode toggle button at top right */}
+          <button
+            onClick={toggleTheme}
+            className="ml-4 px-3 py-2 rounded-full border border-[#2563EB] bg-white dark:bg-[#18181b] text-[#2563EB] dark:text-white font-bold shadow hover:bg-[#2563EB] hover:text-white dark:hover:bg-white dark:hover:text-[#2563EB] transition-colors duration-200"
+            aria-label="Toggle night mode"
+          >
+            {theme === "dark" ? "🌙 Night" : "☀️ Day"}
+          </button>
         </div>
       </nav>
     </>

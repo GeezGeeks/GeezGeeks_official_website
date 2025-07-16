@@ -9,35 +9,54 @@ const blogData = [
   {
     id: "1",
     title: "How to Build Lightning-Fast React Sites",
-
     content: `
-In today's digital world, speed is everything. Users expect web applications to load instantly and respond without delay. In this comprehensive guide, we'll explore proven strategies to make your React sites lightning-fast and deliver a seamless user experience.
+# How to Build Lightning-Fast React Sites 🚀
 
-## 1. Code Splitting
-Code splitting allows you to break your app into smaller bundles, so users only download what's needed for the current page. Use React's built-in lazy loading with React.lazy and Suspense:
+In today's digital world, speed is everything. Users expect web applications to load instantly and respond without delay. Here are the top strategies to make your React sites lightning-fast and deliver a seamless user experience:
+
+---
+
+## 1. Code Splitting & Lazy Loading
+Break your app into smaller bundles so users only download what's needed for the current page.
 
 \`\`\`jsx
 const Blog = React.lazy(() => import('./Blog'));
 \`\`\`
 
-## 2. Image Optimization
-Large images can slow down your site. Use modern formats like WebP, compress images, and leverage responsive images with the srcSet attribute.
-
-## 3. Memoization and useCallback
-Avoid unnecessary re-renders by memoizing components and functions:
-
-const MemoizedComponent = React.memo(MyComponent);
-const memoizedCallback = useCallback(() => { /* ... */ }, [deps]);
-
-## 4. Use a CDN
-Serve static assets from a Content Delivery Network to reduce latency and speed up load times globally.
-
-## 5. Analyze and Monitor Performance
-Use tools like Lighthouse, WebPageTest, and React DevTools to identify bottlenecks and monitor your app's performance over time.
+> **Pro Tip:** Use React.Suspense for smooth loading states!
 
 ---
 
-By following these tips, you can ensure your React applications are not just functional, but also blazing fast. Happy coding!
+## 2. Image Optimization 🖼️
+- Use modern formats like **WebP**
+- Compress images
+- Use responsive images with \`srcSet\`
+
+---
+
+## 3. Memoization & useCallback 🧠
+Avoid unnecessary re-renders by memoizing components and functions:
+
+\`\`\`jsx
+const MemoizedComponent = React.memo(MyComponent);
+const memoizedCallback = useCallback(() => { /* ... */ }, [deps]);
+\`\`\`
+
+---
+
+## 4. Use a CDN 🌍
+Serve static assets from a Content Delivery Network to reduce latency and speed up load times globally.
+
+---
+
+## 5. Analyze & Monitor Performance 📊
+Use tools like **Lighthouse**, **WebPageTest**, and **React DevTools** to identify bottlenecks and monitor your app's performance over time.
+
+---
+
+> "Performance is not a feature, it's a requirement." — Unknown
+
+By following these tips, your React applications will be blazing fast and delightful to use. Happy coding!
 `,
     author: "By John Doe, July 16, 2025",
     image: BlogImg1,
@@ -45,14 +64,65 @@ By following these tips, you can ensure your React applications are not just fun
   {
     id: "2",
     title: "UI/UX Design Principles for 2025",
-    content: `Discover the latest trends and timeless rules for creating beautiful, user-friendly interfaces in 2025.\n\nFull blog content goes here. Add more paragraphs, images, and formatting as needed.`,
+    content: `
+# UI/UX Design Principles for 2025 ✨
+
+Stay ahead of the curve with these modern design principles:
+
+---
+
+## 1. Minimalism with Personality
+- Clean layouts, but with bold accent colors and playful micro-interactions.
+
+## 2. Accessibility-First Design ♿
+- Use sufficient color contrast
+- Provide keyboard navigation
+- Add descriptive alt text for images
+
+## 3. Fluid, Adaptive Layouts 📱
+- Use CSS Grid & Flexbox
+- Design for all screen sizes
+
+## 4. Soft Gradients & Glassmorphism
+- Subtle backgrounds and frosted glass effects add depth and modernity.
+
+---
+
+> "Design is intelligence made visible." — Alina Wheeler
+
+Embrace these trends to create beautiful, user-friendly interfaces in 2025 and beyond!
+`,
     author: "Leia Organa, 1 week ago",
     image: BlogImg2,
   },
   {
     id: "3",
     title: "Branding with Graphics: A Modern Guide",
-    content: `Explore how modern brands use graphics and visual storytelling to stand out in a crowded market.\n\nFull blog content goes here. Add more paragraphs, images, and formatting as needed.`,
+    content: `
+# Branding with Graphics: A Modern Guide 🎨
+
+Modern brands use graphics and visual storytelling to stand out. Here’s how:
+
+---
+
+## 1. Consistent Color Palettes
+- Choose 2-3 brand colors and use them everywhere.
+
+## 2. Custom Illustrations & Icons
+- Unique visuals make your brand memorable.
+
+## 3. Motion Graphics for Engagement
+- Use subtle animations to guide attention and delight users.
+
+## 4. Story-Driven Visuals
+- Every image should reinforce your brand’s story and values.
+
+---
+
+> "Your brand is a story unfolding across all customer touch points." — Jonah Sachs
+
+Level up your branding with these modern graphic strategies!
+`,
     author: "Han Solo, 3 days ago",
     image: BlogImg3,
   },
@@ -74,36 +144,36 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] to-[#e0e7ff] py-12 px-2 flex justify-center items-start">
-      <div className="bg-white shadow-2xl rounded-3xl max-w-2xl w-full overflow-hidden border border-[#e0e7ff]">
-        <div className="relative">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100 dark:from-[#0F172A] dark:to-[#1E293B] py-12 px-2 flex justify-center items-start transition-colors duration-300">
+      <article className="bg-white dark:bg-[#18181b] shadow-2xl rounded-3xl max-w-2xl w-full overflow-hidden border border-slate-100 dark:border-slate-700 transition-colors duration-300">
+        <header className="relative">
           <img
             src={blog.image}
             alt={blog.title}
             className="w-full h-64 object-cover object-center rounded-t-3xl"
           />
-          <div className="absolute top-4 left-4 bg-[#7620ff] text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg">
+          <div className="absolute top-4 left-4 bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 px-4 py-1 rounded-full text-xs font-bold shadow-lg">
             Blog
           </div>
-        </div>
+        </header>
         <div className="p-8">
-          <h1 className="font-extrabold text-4xl mb-3 text-[#2d2d2d] leading-tight drop-shadow-sm">
+          <h1 className="font-extrabold text-4xl mb-3 text-slate-800 dark:text-white leading-tight drop-shadow-sm">
             {blog.title}
           </h1>
-          <div className="text-[#7620ff] font-semibold mb-6 text-sm">
+          <div className="text-blue-600 dark:text-cyan-400 font-semibold mb-6 text-sm">
             {blog.author}
           </div>
-          <div className="prose prose-lg max-w-none text-justify text-[#333] mb-8">
+          <div className="prose prose-lg max-w-none text-justify text-slate-700 dark:text-slate-200 mb-8 transition-colors duration-300">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
           <Link
             to="/"
-            className="inline-block bg-[#7620ff] hover:bg-[#4b1fa7] text-white font-bold py-2 px-6 rounded-full shadow transition-colors duration-200"
+            className="inline-block bg-blue-600 dark:bg-cyan-400 hover:bg-blue-700 dark:hover:bg-cyan-300 text-white dark:text-slate-900 font-bold py-2 px-6 rounded-full shadow transition-colors duration-200"
           >
             ← Back to Blog
           </Link>
         </div>
-      </div>
+      </article>
     </div>
   );
 }

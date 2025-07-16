@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
 /* CUSTOM CLASSES */
@@ -12,9 +13,14 @@
   }
 }
 
-html,
 body {
-  @apply bg-white text-[#0B093B] font-sans overflow-x-hidden text-base font-normal;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Links */

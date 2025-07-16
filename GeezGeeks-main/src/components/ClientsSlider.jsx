@@ -31,14 +31,32 @@ export default function ClientSlider() {
     ],
   };
 
-  const logos = [ClientLogo01, ClientLogo02, ClientLogo03, ClientLogo04, ClientLogo05, ClientLogo06, ClientLogo03, ClientLogo04, ClientLogo01, ClientLogo02];
+  const logos = [
+    ClientLogo01,
+    ClientLogo02,
+    ClientLogo03,
+    ClientLogo04,
+    ClientLogo05,
+    ClientLogo06,
+    ClientLogo03,
+    ClientLogo04,
+    ClientLogo01,
+    ClientLogo02,
+  ];
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-white dark:bg-[#0F172A] rounded-2xl p-4 md:p-8 shadow transition-colors duration-300">
       <Slider {...settings}>
         {logos.map((logo, idx) => (
-          <div key={idx} className="flex items-center justify-center h-[100px] cursor-pointer outline-none border-none">
-            <img src={logo} alt="client logo" className="h-full w-full p-[10%]" />
+          <div
+            key={idx}
+            className="flex items-center justify-center h-[80px] md:h-[100px] cursor-pointer outline-none border-none"
+          >
+            <img
+              src={logo}
+              alt="client logo"
+              className="h-full w-auto max-w-[120px] p-2 md:p-4 grayscale hover:grayscale-0 transition-all duration-200"
+            />
           </div>
         ))}
       </Slider>

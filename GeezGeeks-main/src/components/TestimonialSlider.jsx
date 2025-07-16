@@ -28,25 +28,25 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <div>
+    <div className="bg-white dark:bg-[#0F172A] rounded-2xl p-6 md:p-10 shadow-lg transition-colors duration-300">
       <Slider {...settings}>
         <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
+          <TestimonialBox
+            text="The team’s creativity and technical skill brought our vision to life. Ongoing support has been fantastic."
+            author="Yohanes Alemu"
+          />
         </div>
         <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
+          <TestimonialBox
+            text="GeezGeeks transformed our online store into a revenue powerhouse. Their process was transparent and on-time"
+            author="Getachew Shume"
+          />
         </div>
         <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
-        </div>
-        <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
-        </div>
-        <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
-        </div>
-        <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
-          <TestimonialBox text="Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it." author="Ralph Waldo Emerson" />
+          <TestimonialBox
+            text="I really love the team, how they approach their client, how they work together with a perfect coordination. They believe with having a clear communication with their customers. Overall they are the perfect organization that I have ever worked before and, I am willing to work with them again in the future."
+            author="Saron Alemayehu"
+          />
         </div>
       </Slider>
     </div>

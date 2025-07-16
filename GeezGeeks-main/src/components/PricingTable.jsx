@@ -1,8 +1,5 @@
 import React from "react";
 import FullButton from "./FullButton";
-import MonitorIcon from "../assets/svg/Services/MonitorIcon";
-import BrowserIcon from "../assets/svg/Services/BrowserIcon";
-import PenandPc from "../assets/svg/Services/PenandPC";
 import CheckMark from "../assets/svg/Checkmark";
 
 export default function PricingTable({
@@ -13,35 +10,33 @@ export default function PricingTable({
   offers,
   action,
 }) {
-  const icons = {
-    PenandPc: <PenandPc />,
-    monitor: <MonitorIcon />,
-    browser: <BrowserIcon />,
-  };
-
-  const getIcon = icons[icon] || null;
-
   return (
-    <div className="whiteBg radius8 shadow w-full text-left p-[20px_30px] mt-[30px]">
-      <div className="flexSpaceCenter">
-        {getIcon}
-        <p className="font30 font-extrabold">{price}</p>
+    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-lg w-full text-left p-8 mt-8 transition-colors duration-300 border border-slate-100 dark:border-slate-700">
+      <div className="flex items-center justify-between mb-4">
+        {icon && <div className="text-3xl mr-2">{icon}</div>}
+        <p className="text-3xl font-extrabold text-[#2563EB] dark:text-cyan-400">
+          {price}
+        </p>
       </div>
-      <div className="my-[30px]">
-        <h4 className="font30 font-extrabold">{title}</h4>
-        <p className="font13">{text}</p>
+      <div className="my-6">
+        <h4 className="text-2xl font-bold mb-1 text-slate-800 dark:text-slate-100">
+          {title}
+        </h4>
+        <p className="text-sm text-slate-500 dark:text-slate-400">{text}</p>
       </div>
       <div>
         {offers?.map((item, index) => (
-          <div key={index} className="flexNullCenter my-[15px]">
-            <div className="relative -top-[1px] mr-[15px] min-w-[20px]">
+          <div key={index} className="flex items-center my-3">
+            <div className="relative -top-px mr-3 min-w-[20px]">
               {item.cheked ? <CheckMark /> : null}
             </div>
-            <p className="font20 font-extrabold">{item.name}</p>
+            <p className="text-base font-semibold text-slate-700 dark:text-slate-200">
+              {item.name}
+            </p>
           </div>
         ))}
       </div>
-      <div className="max-w-[120px] mx-auto mt-[30px]">
+      <div className="max-w-[120px] mx-auto mt-6">
         <FullButton title="Buy" action={action} />
       </div>
     </div>

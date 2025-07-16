@@ -8,25 +8,34 @@ export default function Contact() {
   };
 
   return (
-    <div className="w-full">
-      <div className="darkBg">
-        <div className="container">
-          <div className="flexSpaceCenter py-[30px] max-[550px]:flex-col">
-            <Link to="home" smooth={true} offset={-80} className="flexCenter animate pointer">
-              <LogoImg />
-              <h1 className="font15 extraBold whiteColor ml-[15px]">Fanatic</h1>
-            </Link>
+    <footer className="w-full bg-slate-900 dark:bg-black text-white transition-colors duration-300">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between py-8 gap-4">
+          <Link
+            to="home"
+            smooth={true}
+            offset={-80}
+            className="flex items-center gap-3 cursor-pointer"
+          >
+            <LogoImg />
+          </Link>
 
-            <p className="whiteColor font13 max-[550px]:my-[20px]">
-              © {getCurrentYear()} - <span className="purpleColor font13">Fanatic</span> All Right Reserved
-            </p>
+          <p className="text-sm text-slate-300">
+            © {getCurrentYear()} -{" "}
+            <span className="text-cyan-400 font-semibold">Geez Geeks</span> All
+            Rights Reserved
+          </p>
 
-            <Link to="home" smooth={true} offset={-80} className="whiteColor animate pointer font13">
-              Back to top
-            </Link>
-          </div>
+          <Link
+            to="home"
+            smooth={true}
+            offset={-80}
+            className="text-cyan-400 hover:text-cyan-200 text-sm font-semibold cursor-pointer transition-colors duration-200"
+          >
+            Back to top
+          </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

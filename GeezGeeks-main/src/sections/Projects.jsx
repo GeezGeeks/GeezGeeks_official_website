@@ -76,156 +76,118 @@ export default function Projects() {
       : projectsData.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="w-full">
-      <div className="whiteBg">
-        <div className="container">
-          <div className="text-left md:text-center mb-[30px]">
-            <h1 className="font40 extraBold">Our Projects</h1>
-            <p className="font15">
-              Explore a selection of our favorite projects and case studies,
-              each demonstrating how we solve real-world challenges with
-              creative digital solutions.
-            </p>
-          </div>
-
-          {/* Filter Buttons */}
-          <div className="flex gap-4 justify-center mb-8 flex-wrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`px-5 py-2 rounded-full font-semibold border transition-all duration-200 ${
-                  filter === cat
-                    ? "bg-[#7620ff] text-white border-[#7620ff]"
-                    : "bg-white border-[#7620ff] text-[#7620ff] hover:bg-[#f3f3f3]"
-                }`}
-                onClick={() => setFilter(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Project Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {filteredProjects.map((project, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-[#7620ff] relative"
-                onClick={() => setSelectedProject(project)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="rounded-lg w-full h-40 object-cover mb-4"
-                />
-                <h3 className="font20 font-extrabold mb-2 text-center">
-                  {project.name}
-                </h3>
-                <p className="font13 text-center mb-2">{project.description}</p>
-                <div className="flex flex-wrap gap-2 justify-center mb-2">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-[#f3f3f3] rounded text-xs font-semibold text-[#7620ff]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <span className="absolute top-4 right-4 px-3 py-1 bg-[#7620ff] text-white text-xs rounded-full">
-                  {project.category}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Modal for project link */}
-          {selectedProject && (
-            <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-[9999]">
-              <div className="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full relative">
-                <button
-                  className="absolute top-2 right-2 text-2xl font-bold text-[#7620ff]"
-                  onClick={() => setSelectedProject(null)}
-                >
-                  &times;
-                </button>
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.name}
-                  className="rounded-lg w-full h-40 object-cover mb-4"
-                />
-                <h3 className="font20 font-extrabold mb-2 text-center">
-                  {selectedProject.name}
-                </h3>
-                <p className="font13 text-center mb-2">
-                  {selectedProject.description}
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center mb-4">
-                  {selectedProject.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-[#f3f3f3] rounded text-xs font-semibold text-[#7620ff]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center py-3 bg-[#7620ff] text-white rounded-lg font-semibold hover:bg-[#580cd2] transition-all duration-200"
-                >
-                  Visit Project
-                </a>
-              </div>
-            </div>
-          )}
+    <section
+      id="projects"
+      className="w-full py-16 bg-slate-50 dark:bg-[#0F172A] transition-colors duration-300"
+    >
+      <div className="container mx-auto px-4">
+        <div className="text-left md:text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+            Our Projects
+          </h1>
+          <p className="text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Explore a selection of our favorite projects and case studies, each
+            demonstrating how we solve real-world challenges with creative
+            digital solutions.
+          </p>
         </div>
-      </div>
 
-      <div className="lightBg">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center py-[100px] md:py-[60px] gap-[30px]">
-            <div className="relative w-full md:w-1/2">
-              <div className="absolute top-[-300px] left-0 w-full md:static md:top-0 md:order-1 px-[15%] md:px-0">
-                <img
-                  className="radius8 w-full h-auto"
-                  src={AddImage2}
-                  alt="add"
-                />
-              </div>
-            </div>
+        {/* Filter Buttons */}
+        <div className="flex gap-4 justify-center mb-8 flex-wrap">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`px-5 py-2 rounded-full font-semibold border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0F172A] ${
+                filter === cat
+                  ? "bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 border-blue-600 dark:border-cyan-400 shadow"
+                  : "bg-white dark:bg-[#18181b] border-blue-600 dark:border-cyan-400 text-blue-600 dark:text-cyan-400 hover:bg-blue-50 dark:hover:bg-cyan-900"
+              }`}
+              onClick={() => setFilter(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-            <div className="w-full md:w-1/2 text-left md:text-left">
-              <h4 className="font15 semiBold">A few words about company</h4>
-              <h2 className="font40 extraBold my-[15px]">
-                A Study of Creativity
-              </h2>
-              <p className="font12 max-w-[475px]">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum.
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {filteredProjects.map((project, i) => (
+            <div
+              key={i}
+              className="bg-white dark:bg-[#18181b] rounded-2xl shadow-lg p-6 flex flex-col items-center cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-100 dark:border-slate-700 hover:border-blue-600 dark:hover:border-cyan-400 relative"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded-lg w-full h-40 object-cover mb-4 shadow"
+              />
+              <h3 className="text-xl font-bold mb-2 text-center text-slate-800 dark:text-slate-100">
+                {project.name}
+              </h3>
+              <p className="text-sm text-center mb-2 text-slate-600 dark:text-slate-300">
+                {project.description}
               </p>
-              <div className="flexNullCenter mt-[30px] gap-[15px] flex-wrap">
-                <div className="w-[190px]">
-                  <FullButton
-                    title="Get Started"
-                    action={() => alert("clicked")}
-                  />
-                </div>
-                <div className="w-[190px]">
-                  <FullButton
-                    title="Contact Us"
-                    action={() => alert("clicked")}
-                    border
-                  />
-                </div>
+              <div className="flex flex-wrap gap-2 justify-center mb-2">
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-1 bg-blue-50 dark:bg-cyan-900 rounded text-xs font-semibold text-blue-600 dark:text-cyan-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
+              <span className="absolute top-4 right-4 px-3 py-1 bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 text-xs rounded-full">
+                {project.category}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Modal for project link */}
+        {selectedProject && (
+          <div className="fixed inset-0 flex items-center justify-center z-[9999] bg-black/70 dark:bg-black/80 transition-colors duration-300">
+            <div className="bg-white dark:bg-[#18181b] p-8 rounded-2xl shadow-lg max-w-md w-full relative border border-slate-100 dark:border-slate-700">
+              <button
+                className="absolute top-2 right-2 text-2xl font-bold text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-200"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Close project modal"
+              >
+                &times;
+              </button>
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.name}
+                className="rounded-lg w-full h-40 object-cover mb-4 shadow"
+              />
+              <h3 className="text-xl font-bold mb-2 text-center text-slate-800 dark:text-slate-100">
+                {selectedProject.name}
+              </h3>
+              <p className="text-sm text-center mb-2 text-slate-600 dark:text-slate-300">
+                {selectedProject.description}
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center mb-4">
+                {selectedProject.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-1 bg-blue-50 dark:bg-cyan-900 rounded text-xs font-semibold text-blue-600 dark:text-cyan-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center py-3 bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-cyan-300 transition-all duration-200"
+              >
+                Visit Project
+              </a>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

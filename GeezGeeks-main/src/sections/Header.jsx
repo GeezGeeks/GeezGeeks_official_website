@@ -8,14 +8,14 @@ export default function Header() {
   return (
     <section
       id="home"
-      className="container flexSpaceCenter pt-[80px] w-full min-h-[840px] max-[960px]:flex-col"
+      className="container flex flex-row flexSpaceCenter pt-24 w-full min-h-[840px] max-[960px]:flex-col"
     >
-      <div className="w-1/2 h-full flexCenter max-[960px]:w-full max-[960px]:order-2 max-[960px]:my-[50px] max-[560px]:my-[80px]">
-        <div className="max-[960px]:textCenter">
-          <h1 className="extraBold font60">
+      <div className="w-1/2 h-full flex items-center justify-center max-[960px]:w-full max-[960px]:order-2 max-[960px]:my-12 max-[560px]:my-20">
+        <div className="max-[960px]:text-center">
+          <h1 className="font-extrabold text-5xl md:text-6xl text-slate-800 dark:text-white mb-6 leading-tight transition-colors duration-300">
             We Craft Digital Experiences That Inspire and Connect.
           </h1>
-          <div className="max-w-[470px] py-[15px] pb-[50px] leading-6 font15 semiBold max-[960px]:max-w-full max-[960px]:textCenter">
+          <div className="max-w-xl py-4 pb-10 leading-7 text-base font-semibold text-slate-600 dark:text-slate-300 max-[960px]:max-w-full max-[960px]:text-center">
             At GeezGeeks, we fuse design with technology to build websites,
             brands, and solutions that speak your story loud and clear.
           </div>
@@ -25,32 +25,32 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="w-1/2 h-full relative max-[960px]:w-full max-[960px]:order-1 max-[960px]:mt-[30px]">
-        <div className="flex justify-end relative z-[9] max-[960px]:justify-center">
+      <div className="w-1/2 h-full relative max-[960px]:w-full max-[960px]:order-1 max-[960px]:mt-8">
+        <div className="flex justify-end relative z-10 max-[960px]:justify-center">
           <img
             src={HeaderImage}
             alt="office"
-            className="radius8 z-[9] max-[560px]:w-[80%] max-[560px]:h-auto"
+            className="rounded-2xl shadow-lg z-10 max-[560px]:w-4/5 max-[560px]:h-auto"
           />
-          <div className="absolute left-0 bottom-[50px] max-w-[330px] p-[30px] flexCenter darkBg radius8 z-[99] max-[960px]:left-[20px] max-[560px]:bottom-[-50px]">
+          <div className="absolute left-0 bottom-12 max-w-md p-8 flex items-center bg-white dark:bg-[#1E293B] rounded-2xl shadow-lg z-20 max-[960px]:left-5 max-[560px]:bottom-[-50px] transition-colors duration-300">
             <div className="absolute left-[-20px] top-[-10px]">
               <QuotesIcon />
             </div>
             <div>
-              <p className="font15 whiteColor italic">
+              <p className="text-base text-slate-700 dark:text-slate-200 italic mb-2 transition-colors duration-300">
                 Friends, such as we desire, are dreams and fables. Friendship
                 demands the ability to do without it.
               </p>
-              <p className="font13 orangeColor textRight mt-[10px]">
+              <p className="text-sm text-cyan-600 dark:text-cyan-400 text-right mt-2 transition-colors duration-300">
                 Ralph Waldo Emerson
               </p>
             </div>
           </div>
-          <div className="absolute right-[-100px] bottom-[100px] z-[2] max-[960px]:right-[100px] max-[560px]:hidden">
+          <div className="absolute right-[-100px] bottom-24 z-0 max-[960px]:right-24 max-[560px]:hidden">
             <Dots />
           </div>
         </div>
-        <div className="lightBg w-[30%] h-[700px] absolute top-0 right-0 z-0 max-[960px]:hidden" />
+        <div className="bg-slate-100 dark:bg-[#23232a] w-1/3 h-[700px] absolute top-0 right-0 z-0 max-[960px]:hidden transition-colors duration-300" />
       </div>
     </section>
   );

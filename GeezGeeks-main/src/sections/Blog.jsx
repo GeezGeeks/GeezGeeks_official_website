@@ -43,19 +43,21 @@ export default function Blog() {
   const hasMore = visibleCount < allBlogPosts.length;
 
   return (
-    <section id="blog" className="w-full pt-[20px]">
-      <div className="whiteBg">
-        <div className="container">
-          <div className="mb-[30px] text-left md:text-center">
-            <h1 className="font40 extraBold">Our Blog Stories</h1>
-            <p className="font15">
+    <section id="blog" className="w-full pt-8">
+      <div className="bg-slate-50 dark:bg-[#0F172A] transition-colors duration-300 py-12">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 text-left md:text-center">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+              Our Blog Stories
+            </h1>
+            <p className="text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Stay updated on the latest in web design trends, SEO hacks, and
               development best practices. Our expert insights help you navigate
               the ever-changing digital landscape.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[30px] textCenter">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <Link
                 key={post.id}
@@ -63,33 +65,30 @@ export default function Blog() {
                 className="block hover:shadow-lg transition-shadow"
                 aria-label={`Read more about ${post.title}`}
               >
-                <BlogBox
-                  title={post.title}
-                  text={post.text}
-                  tag={post.tag}
-                  author={post.author}
-                  image={post.image}
-                  action={null}
-                >
-                  <div className="w-full flex flex-col items-center">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="rounded-lg w-full h-40 object-cover mb-4"
-                    />
-                    <span
-                      className="text-[#7620ff] font-semibold underline mt-2 block transition-colors hover:text-[#4b1fa7]"
-                    >
-                      Read More
-                    </span>
-                  </div>
-                </BlogBox>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="rounded-xl w-full h-40 object-cover mb-4 shadow"
+                  />
+                  <BlogBox
+                    title={post.title}
+                    text={post.text}
+                    tag={post.tag}
+                    author={post.author}
+                    image={post.image}
+                    action={null}
+                  />
+                  <span className="text-blue-600 dark:text-cyan-400 font-semibold underline mt-2 block transition-colors hover:text-blue-800 dark:hover:text-cyan-200">
+                    Read More
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
 
           {hasMore && (
-            <div className="flexCenter mt-[50px] mb-[50px]">
+            <div className="flex justify-center mt-12 mb-12">
               <div className="w-[200px]">
                 <FullButton
                   title="Load More"
@@ -101,16 +100,12 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="lightBg py-[50px]">
-        <div className="container">
-          <div className="mb-[30px] text-left md:text-center">
-            <h1 className="font40 extraBold">What They Say?</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p>
+      <div className="bg-white dark:bg-[#18181b] py-12 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 text-left md:text-center">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+              What They Say?
+            </h1>
           </div>
           <TestimonialSlider />
         </div>

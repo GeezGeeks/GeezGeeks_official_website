@@ -4,12 +4,10 @@ import Sidebar from "./Sidebar";
 import Backdrop from "./Backdrop";
 import LogoIcon from "../assets/svg/Logo";
 import BurgerIcon from "../assets/svg/BurgerIcon";
-import { useTheme } from "./ThemeContext";
 
 export default function TopNavbar() {
   const [y, setY] = React.useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = React.useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   React.useEffect(() => {
     const handleScroll = () => setY(window.scrollY);
@@ -53,14 +51,6 @@ export default function TopNavbar() {
               )
             )}
           </ul>
-          {/* Night mode toggle button at top right */}
-          <button
-            onClick={toggleTheme}
-            className="ml-4 px-3 py-2 rounded-full border border-[#2563EB] bg-white dark:bg-[#18181b] text-[#2563EB] dark:text-white font-bold shadow hover:bg-[#2563EB] hover:text-white dark:hover:bg-white dark:hover:text-[#2563EB] transition-colors duration-200"
-            aria-label="Toggle night mode"
-          >
-            {theme === "dark" ? "🌙 Night" : "☀️ Day"}
-          </button>
         </div>
       </nav>
     </>

@@ -1,7 +1,8 @@
 import React from "react";
 import FullButton from "../components/FullButton";
-import HeaderImage from "../assets/img/header-img.png";
+import HeaderImage from "../assets/img/header-img.jpg";
 import QuotesIcon from "../assets/svg/Quotes";
+
 import Dots from "../assets/svg/Dots";
 
 export default function Header() {

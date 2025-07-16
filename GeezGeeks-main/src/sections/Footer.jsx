@@ -17,7 +17,8 @@ export default function Contact() {
             offset={-80}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <LogoImg />
+            
+            <h1 className="text-lg font-extrabold text-white">Geez Geeks</h1>
           </Link>
 
           <p className="text-sm text-slate-300">

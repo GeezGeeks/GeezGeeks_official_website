@@ -2,6 +2,16 @@
 
 /* CUSTOM CLASSES */
 
+/* Responsive display utilities (mimic Tailwind) */
+.hidden {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex !important;
+  }
+}
+
 html,
 body {
   @apply bg-white text-[#0B093B] font-sans overflow-x-hidden text-base font-normal;

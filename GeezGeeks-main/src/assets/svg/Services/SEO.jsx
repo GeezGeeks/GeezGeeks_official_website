@@ -2,7 +2,7 @@ import * as React from "react";
 
 function SvgComponent(props) {
   return (
-    <img src="Logo.png" alt="Logo" srcset="" width={80} height={45} className="ml-5" />
+    <img src="/SEO.png" alt="" srcset="" width={80} height={80}/>
   );
 }
 

@@ -25,19 +25,6 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </li>
         ))}
       </ul>
-
-      <ul className="flexSpaceCenter px-[40px]">
-        <li className="semiBold font15 pointer">
-          <a href="/" className="whiteColor pr-[30px] py-[10px] block">
-            Log in
-          </a>
-        </li>
-        <li className="semiBold font15 pointer flexCenter">
-          <a href="/" className="radius8 lightBg px-[15px] py-[10px] block">
-            Get Started
-          </a>
-        </li>
-      </ul>
     </nav>
   );
 }

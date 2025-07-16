@@ -23,34 +23,20 @@ export default function TopNavbar() {
         <div className="container flexSpaceCenter relative h-full">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
-            <h1 className="font20 extraBold ml-[15px]">fanatic</h1>
           </Link>
 
           <button onClick={() => toggleSidebar(!sidebarOpen)} className="pointer block md:hidden outline-none border-0 bg-transparent h-full px-[15px]">
             <BurgerIcon />
           </button>
 
-          <ul className="flexNullCenter hidden md:flex">
+          <ul className="flexCenter hidden md:flex">
             {["home", "services", "projects", "blog", "pricing", "contact"].map((section) => (
-              <li key={section} className="semiBold font15 pointer">
+              <li key={section} className="semiBold font18 pointer">
                 <Link to={section} spy={true} smooth={true} offset={-80} activeClass="active" className="block px-[15px] py-[10px]">
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </Link>
               </li>
             ))}
-          </ul>
-
-          <ul className="flexNullCenter hidden md:flex">
-            <li className="semiBold font15 pointer">
-              <a href="/" className="block pr-[30px] py-[10px]">
-                Log in
-              </a>
-            </li>
-            <li className="semiBold font15 pointer flexCenter">
-              <a href="/" className="radius8 lightBg px-[15px] py-[10px] block">
-                Get Started
-              </a>
-            </li>
           </ul>
         </div>
       </nav>

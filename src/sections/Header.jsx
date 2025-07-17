@@ -1,4 +1,5 @@
 import React from "react";
+import { scroller } from "react-scroll";
 import FullButton from "../components/FullButton";
 import HeaderImage from "../assets/img/header-img.jpg";
 import QuotesIcon from "../assets/svg/Quotes";
@@ -20,8 +21,17 @@ export default function Header() {
             At GeezGeeks, we fuse design with technology to build websites,
             brands, and solutions that speak your story loud and clear.
           </div>
-          <div className="max-w-[190px] max-[960px]:mx-auto">
-            <FullButton title="Get Started" />
+          <div className="w-[190px]">
+            <FullButton
+              title="Contact Us"
+              action={() =>
+                scroller.scrollTo("contact", {
+                  smooth: true,
+                  offset: -80,
+                  duration: 500,
+                })
+              }
+            />
           </div>
         </div>
       </div>

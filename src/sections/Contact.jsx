@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import ContactImg1 from "../assets/img/contact-1.png";
 import ContactImg2 from "../assets/img/contact-2.png";
 import ContactImg3 from "../assets/img/contact-3.png";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const form = useRef();
@@ -12,18 +13,21 @@ export default function Contact() {
     e.preventDefault();
     setError("");
     setSent(false);
+
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
+        "service_25ioska", // service ID
+        "template_v7hfwu8", // template ID
         form.current,
-        "YOUR_PUBLIC_KEY" // replace with your EmailJS public key
+        "Is2pS3n-hsdTC6n0K" // EmailJS public key
       )
       .then(
         (result) => {
           setSent(true);
+          form.current.reset(); // clear the form after success
         },
         (error) => {
+          console.error(error.text);
           setError("Failed to send. Please try again later.");
         }
       );
@@ -34,23 +38,16 @@ export default function Contact() {
       <div className="lightBg dark:bg-[#18181b] transition-colors duration-300">
         <div className="container">
           <div className="pt-[70px] pb-[30px] max-[860px]:text-center">
-            <h1 className="font40 extraBold text-[#18181b] dark:text-white transition-colors duration-300">
-              Let's get in touch
-            </h1>
+            <h1 className="font40 extraBold text-[#18181b] dark:text-white transition-colors duration-300">Let's get in touch</h1>
             <p className="font13 text-[#333] dark:text-gray-300 transition-colors duration-300">
-              We’re excited to hear about your project and explore how we can
-              work together. Fill out the form or drop us an email, and
+              We’re excited to hear about your project and explore how we can work together. Fill out the form or drop us an email, and
               <br />
               we’ll respond within one business day.
             </p>
           </div>
           <div className="row pb-[30px]">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex items-center justify-center">
-              <form
-                ref={form}
-                onSubmit={sendEmail}
-                className="bg-white dark:bg-[#23232a] shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-[#e0e7ff] dark:border-[#333] transition-colors duration-300"
-              >
+              <form ref={form} onSubmit={sendEmail} className="bg-white dark:bg-[#23232a] shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-[#e0e7ff] dark:border-[#333] transition-colors duration-300">
                 <div className="mb-6 relative">
                   <input
                     type="text"
@@ -68,14 +65,7 @@ export default function Contact() {
                   </label>
                 </div>
                 <div className="mb-6 relative">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    className="peer h-12 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent"
-                    placeholder="Email"
-                  />
+                  <input type="email" name="email" id="email" required className="peer h-12 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent" placeholder="Email" />
                   <label
                     htmlFor="email"
                     className="absolute left-0 -top-4 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[#7620ff] peer-focus:text-sm"
@@ -84,14 +74,7 @@ export default function Contact() {
                   </label>
                 </div>
                 <div className="mb-6 relative">
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    required
-                    className="peer h-12 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent"
-                    placeholder="Subject"
-                  />
+                  <input type="text" name="subject" id="subject" required className="peer h-12 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent" placeholder="Subject" />
                   <label
                     htmlFor="subject"
                     className="absolute left-0 -top-4 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[#7620ff] peer-focus:text-sm"
@@ -115,20 +98,11 @@ export default function Contact() {
                     Message
                   </label>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#7620ff] to-[#4b1fa7] text-white font-bold py-3 rounded-full shadow-lg hover:from-[#4b1fa7] hover:to-[#7620ff] transition-colors duration-200"
-                >
+                <button type="submit" className="w-full bg-gradient-to-r from-[#7620ff] to-[#4b1fa7] text-white font-bold py-3 rounded-full shadow-lg hover:from-[#4b1fa7] hover:to-[#7620ff] transition-colors duration-200">
                   Send Message
                 </button>
-                {sent && (
-                  <div className="text-green-600 mt-4 text-center">
-                    Message sent successfully!
-                  </div>
-                )}
-                {error && (
-                  <div className="text-red-600 mt-4 text-center">{error}</div>
-                )}
+                {sent && <div className="text-green-600 mt-4 text-center">Message sent successfully!</div>}
+                {error && <div className="text-red-600 mt-4 text-center">{error}</div>}
               </form>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">

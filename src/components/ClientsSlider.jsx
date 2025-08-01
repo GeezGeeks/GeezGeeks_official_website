@@ -45,17 +45,17 @@ export default function ClientSlider() {
   ];
 
   return (
-    <div className="w-full bg-white dark:bg-[#0F172A] rounded-2xl p-4 md:p-8 shadow transition-colors duration-300">
+    <div className="w-full">
       <Slider {...settings}>
         {logos.map((logo, idx) => (
           <div
             key={idx}
-            className="flex items-center justify-center h-[80px] md:h-[100px] cursor-pointer outline-none border-none"
+            className="flex items-center justify-center h-[100px] cursor-pointer outline-none border-none"
           >
             <img
               src={logo}
               alt="client logo"
-              className="h-full w-auto max-w-[120px] p-2 md:p-4 grayscale hover:grayscale-0 transition-all duration-200"
+              className="h-full w-full p-[10%]"
             />
           </div>
         ))}

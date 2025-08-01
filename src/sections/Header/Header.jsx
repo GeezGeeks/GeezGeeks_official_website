@@ -1,11 +1,11 @@
 import React from "react";
 import { scroller } from "react-scroll";
-import FullButton from "../components/FullButton";
-import HeaderImage from "../assets/img/header-img.jpg";
-import QuotesIcon from "../assets/svg/Quotes";
+import FullButton from "../../components/FullButton.jsx";
+import HeaderImage from "../../assets/img/header-img.jpg";
+import QuotesIcon from "../../assets/svg/Quotes.jsx";
 
-import Dots from "../assets/svg/Dots";
-
+import Dots from "../../assets/svg/Dots.jsx";
+import "./Header.css"
 export default function Header() {
   return (
     <section
@@ -14,10 +14,10 @@ export default function Header() {
     >
       <div className="w-1/2 h-full flex items-center justify-center max-[960px]:w-full max-[960px]:order-2 max-[960px]:my-12 max-[560px]:my-20">
         <div className="max-[960px]:text-center">
-          <h1 className="font-extrabold text-5xl md:text-6xl text-slate-800 dark:text-white mb-6 leading-tight transition-colors duration-300">
-            We Craft Digital Experiences That Inspire and Connect.
+          <h1 className="font-extrabold text-5xl md:text-6xl text-slate-800 dark  mb-6 leading-tight transition-colors duration-300 header-text">
+            <span className="stroke-text">We Craft</span>  Digital Experiences That Inspire And Connect.
           </h1>
-          <div className="max-w-xl py-4 pb-10 leading-7 text-base font-semibold text-slate-600 dark:text-slate-300 max-[960px]:max-w-full max-[960px]:text-center">
+          <div className="max-w-xl mr-5 py-4 pb-10 leading-7 text-base font-semibold text-slate-600 dark:text-slate-600 max-[960px]:max-w-full max-[960px]:text-center">
             At GeezGeeks, we fuse design with technology to build websites,
             brands, and solutions that speak your story loud and clear.
           </div>

@@ -1,13 +1,13 @@
 import React from "react";
 
 import TopNavbar from "../components/TopNavbar";
-import Header from "../sections/Header";
+import Header from "../sections/Header/Header.jsx";
 import Services from "../sections/Services";
 import Projects from "../sections/Projects";
 import Blog from "../sections/Blog";
-import Pricing from "../sections/Pricing";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
+import AboutUs from "../sections/About/aboutUs.jsx";
 
 export default function Landing() {
   return (
@@ -15,12 +15,11 @@ export default function Landing() {
       <TopNavbar />
       <Header />
       <Services />
+      <AboutUs />
       <Projects />
       <Blog />
-      {/* <Pricing /> */}
       <Contact />
       <Footer />
     </>
   );
 }
-

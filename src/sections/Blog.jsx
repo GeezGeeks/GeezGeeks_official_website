@@ -44,32 +44,32 @@ export default function Blog() {
 
   return (
     <section id="blog" className="w-full pt-8">
-      <div className="bg-slate-50 dark:bg-[#0F172A] transition-colors duration-300 py-12">
+      <div className="bg-slate-50  transition-colors duration-300 py-12">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-left md:text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">
               Our Blog Stories
             </h1>
-            <p className="text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base text-slate-600 max-w-2xl mx-auto">
               Stay updated on the latest in web design trends, SEO hacks, and
               development best practices. Our expert insights help you navigate
               the ever-changing digital landscape.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
             {blogPosts.map((post) => (
               <Link
                 key={post.id}
                 to={post.link}
-                className="block hover:shadow-lg transition-shadow"
+                className="block hover:shadow-lg transition-shadow  border! rounded-2xl! border-slate-200 "
                 aria-label={`Read more about ${post.title}`}
               >
                 <div className="flex flex-col items-center">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="rounded-xl w-full h-40 object-cover mb-4 shadow"
+                    className=" w-full h-40 object-cover shadow rounded-t-2xl"
                   />
                   <BlogBox
                     title={post.title}
@@ -79,7 +79,7 @@ export default function Blog() {
                     image={post.image}
                     action={null}
                   />
-                  <span className="text-blue-600 dark:text-cyan-400 font-semibold underline mt-2 block transition-colors hover:text-blue-800 dark:hover:text-cyan-200">
+                  <span className="text-blue-600  font-semibold underline my-2 block transition-colors hover:text-blue-800 ">
                     Read More
                   </span>
                 </div>
@@ -100,10 +100,10 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#18181b] py-12 transition-colors duration-300">
+      <div className="bg-white py-12 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-left md:text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">
               What They Say?
             </h1>
           </div>

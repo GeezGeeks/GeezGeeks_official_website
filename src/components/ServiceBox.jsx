@@ -18,14 +18,14 @@ export default function ServiceBox({ icon, title, subtitle }) {
   const getIcon = icons[icon] || <RollerIcon />;
 
   return (
-    <div className="w-full flex flex-col items-center bg-white dark:bg-[#1E293B] rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 p-6 md:p-8 transition-colors duration-300">
-      <div className="mx-auto max-w-full md:max-w-none md:m-0 mb-4">
+    <div className="flex flex-col justify-between h-full">
+      <div className="max-w-full md:max-w-none ml-[30%]">
         {getIcon}
       </div>
-      <h2 className="text-xl font-bold max-w-[300px] mx-auto py-4 md:py-2 text-slate-800 dark:text-slate-100 text-center">
+      <h2 className="text-xl font-bold max-w-[300px] py-4 md:py-5 font-sans">
         {title}
       </h2>
-      <p className="text-base max-w-[300px] mx-auto text-slate-600 dark:text-slate-300 text-center">
+      <p className="text-base max-w-[300px] mx-auto font-sans">
         {subtitle}
       </p>
     </div>

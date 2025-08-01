@@ -20,7 +20,7 @@ export default function TopNavbar() {
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <nav
-        className={`fixed top-0 left-0 w-full z-[999] whiteBg dark:bg-[#18181b] animate transition-all duration-300 flexCenter`}
+        className={`fixed top-0 left-0 w-full z-[999] whiteBg dark:bg-[#424247] animate transition-all duration-300 flexCenter`}
         style={{ height: y > 100 ? "60px" : "80px" }}
       >
         <div className="container flexSpaceCenter relative h-full">
@@ -34,7 +34,7 @@ export default function TopNavbar() {
             <BurgerIcon />
           </button>
           <ul className="flexCenter hidden md:flex">
-            {["home", "services", "projects", "blog", "pricing", "contact"].map(
+            {["home", "services", "projects", "blog", "contact"].map(
               (section) => (
                 <li key={section} className="semiBold font18 pointer">
                   <Link
@@ -43,7 +43,7 @@ export default function TopNavbar() {
                     smooth={true}
                     offset={-80}
                     activeClass="active"
-                    className="block px-[15px] py-[10px]"
+                    className="block px-[15px] py-[10px] hover:text-purple-800 focus:text-purple-800 active:text-purple-800 transition-colors"
                   >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </Link>

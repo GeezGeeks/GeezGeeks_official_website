@@ -254,3 +254,12 @@ input:-webkit-autofill {
     @apply text-[2.8rem];
   }
 }
+.stroke-text{
+  color: transparent;
+-webkit-text-stroke-color: purple;
+  -webkit-text-stroke-width: 2px;
+}
+.header-btn{
+  backgrond-color: #F504BF;
+  color: white;
+}

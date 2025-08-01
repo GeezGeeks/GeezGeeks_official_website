@@ -28,7 +28,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#0F172A] rounded-2xl p-6 md:p-10 shadow-lg transition-colors duration-300">
+    <div className="bg-white rounded-2xl p-6 md:p-10 shadow-lg transition-colors duration-300">
       <Slider {...settings}>
         <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
           <TestimonialBox
@@ -44,7 +44,7 @@ export default function TestimonialSlider() {
         </div>
         <div className="w-[90%] px-[5%] pointer flexCenter focus:outline-none focus:border-0">
           <TestimonialBox
-            text="I really love the team, how they approach their client, how they work together with a perfect coordination. They believe with having a clear communication with their customers. Overall they are the perfect organization that I have ever worked before and, I am willing to work with them again in the future."
+            text="They prioritize clear communication with their customers, and I appreciate their approach to customer service. Overall, they are the best organization I have ever worked for."
             author="Saron Alemayehu"
           />
         </div>

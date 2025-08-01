@@ -78,14 +78,14 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="w-full py-16 bg-slate-50 dark:bg-[#0F172A] transition-colors duration-300"
+      className="w-full py-16 bg-slate-50 transition-colors duration-300"
     >
       <div className="container mx-auto px-4">
         <div className="text-left md:text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white mb-2">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">
             Our Projects
           </h1>
-          <p className="text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-base text-slate-600 max-w-2xl mx-auto">
             Explore a selection of our favorite projects and case studies, each
             demonstrating how we solve real-world challenges with creative
             digital solutions.
@@ -97,10 +97,10 @@ export default function Projects() {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`px-5 py-2 rounded-full font-semibold border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0F172A] ${
+              className={`px-5 py-2 rounded-full font-semibold border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white ${
                 filter === cat
-                  ? "bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 border-blue-600 dark:border-cyan-400 shadow"
-                  : "bg-white dark:bg-[#18181b] border-blue-600 dark:border-cyan-400 text-blue-600 dark:text-cyan-400 hover:bg-blue-50 dark:hover:bg-cyan-900"
+                  ? "bg-purple-800 text-white border-blue-600"
+                  : "bg-white border-purple-600 text-purple-600  hover:bg-blue-50"
               }`}
               onClick={() => setFilter(cat)}
             >
@@ -114,7 +114,7 @@ export default function Projects() {
           {filteredProjects.map((project, i) => (
             <div
               key={i}
-              className="bg-white dark:bg-[#18181b] rounded-2xl shadow-lg p-6 flex flex-col items-center cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-100 dark:border-slate-700 hover:border-blue-600 dark:hover:border-cyan-400 relative"
+              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-600 relative"
               onClick={() => setSelectedProject(project)}
             >
               <img
@@ -122,23 +122,23 @@ export default function Projects() {
                 alt={project.name}
                 className="rounded-lg w-full h-40 object-cover mb-4 shadow"
               />
-              <h3 className="text-xl font-bold mb-2 text-center text-slate-800 dark:text-slate-100">
+              <h3 className="text-xl font-bold mb-2 text-center text-slate-800">
                 {project.name}
               </h3>
-              <p className="text-sm text-center mb-2 text-slate-600 dark:text-slate-300">
+              <p className="text-sm text-center mb-2 text-slate-600">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 justify-center mb-2">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-1 bg-blue-50 dark:bg-cyan-900 rounded text-xs font-semibold text-blue-600 dark:text-cyan-400"
+                    className="px-2 py-1 bg-blue-50 rounded text-xs font-semibold bg-purple-200 "
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <span className="absolute top-4 right-4 px-3 py-1 bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 text-xs rounded-full">
+              <span className="absolute top-4 right-4 px-3 py-1 bg-purple-800 text-white text-xs rounded-full">
                 {project.category}
               </span>
             </div>
@@ -147,10 +147,10 @@ export default function Projects() {
 
         {/* Modal for project link */}
         {selectedProject && (
-          <div className="fixed inset-0 flex items-center justify-center z-[9999] bg-black/70 dark:bg-black/80 transition-colors duration-300">
-            <div className="bg-white dark:bg-[#18181b] p-8 rounded-2xl shadow-lg max-w-md w-full relative border border-slate-100 dark:border-slate-700">
+          <div className="fixed inset-0 flex items-center justify-center z-[9999] bg-black/70  transition-colors duration-300">
+            <div className="bg-white  p-8 rounded-2xl shadow-lg max-w-md w-full relative border border-slate-100 ">
               <button
-                className="absolute top-2 right-2 text-2xl font-bold text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-200"
+                className="absolute top-2 right-2 text-2xl font-bold text-blue-600 hover:text-blue-800"
                 onClick={() => setSelectedProject(null)}
                 aria-label="Close project modal"
               >
@@ -161,17 +161,17 @@ export default function Projects() {
                 alt={selectedProject.name}
                 className="rounded-lg w-full h-40 object-cover mb-4 shadow"
               />
-              <h3 className="text-xl font-bold mb-2 text-center text-slate-800 dark:text-slate-100">
+              <h3 className="text-xl font-bold mb-2 text-center text-slate-800 ">
                 {selectedProject.name}
               </h3>
-              <p className="text-sm text-center mb-2 text-slate-600 dark:text-slate-300">
+              <p className="text-sm text-center mb-2 text-slate-600 ">
                 {selectedProject.description}
               </p>
               <div className="flex flex-wrap gap-2 justify-center mb-4">
                 {selectedProject.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-1 bg-blue-50 dark:bg-cyan-900 rounded text-xs font-semibold text-blue-600 dark:text-cyan-400"
+                    className="px-2 py-1 bg-purple-200 rounded text-xs font-semibold"
                   >
                     {tech}
                   </span>
@@ -181,7 +181,7 @@ export default function Projects() {
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center py-3 bg-blue-600 dark:bg-cyan-400 text-white dark:text-slate-900 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-cyan-300 transition-all duration-200"
+                className="block w-full text-center py-3 bg-purple-800 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-200 text-white!"
               >
                 Visit Project
               </a>

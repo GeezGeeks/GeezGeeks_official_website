@@ -35,11 +35,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="w-full">
-      <div className="lightBg dark:bg-[#18181b] transition-colors duration-300">
+      <div className="lightBg  transition-colors duration-300">
         <div className="container">
           <div className="pt-[70px] pb-[30px] max-[860px]:text-center">
-            <h1 className="font40 extraBold text-[#18181b] dark:text-white transition-colors duration-300">Let's get in touch</h1>
-            <p className="font13 text-[#333] dark:text-gray-300 transition-colors duration-300">
+            <h1 className="font40 extraBold text-[#18181b]  transition-colors duration-300">Let's get in touch</h1>
+            <p className="font13 text-[#333]  transition-colors duration-300">
               We’re excited to hear about your project and explore how we can work together. Fill out the form or drop us an email, and
               <br />
               we’ll respond within one business day.
@@ -47,19 +47,19 @@ export default function Contact() {
           </div>
           <div className="row pb-[30px]">
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex items-center justify-center">
-              <form ref={form} onSubmit={sendEmail} className="bg-white dark:bg-[#23232a] shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-[#e0e7ff] dark:border-[#333] transition-colors duration-300">
+              <form ref={form} onSubmit={sendEmail} className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md mx-auto border border-[#e0e7ff] transition-colors duration-300">
                 <div className="mb-6 relative">
                   <input
                     type="text"
                     name="fname"
                     id="fname"
                     required
-                    className="peer h-12 w-full border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent"
+                    className="peer h-12 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-[#7620ff] bg-transparent"
                     placeholder="First Name"
                   />
                   <label
                     htmlFor="fname"
-                    className="absolute left-0 -top-4 text-gray-600 dark:text-gray-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 dark:peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[#7620ff] peer-focus:text-sm"
+                    className="absolute left-0 -top-4 text-gray-600  text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[#7620ff] peer-focus:text-sm"
                   >
                     First Name
                   </label>

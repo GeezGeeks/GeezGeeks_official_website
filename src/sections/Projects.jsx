@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-
-import FullButton from "../components/FullButton";
-import AddImage2 from "../assets/img/add/add2.png";
 import ProjectImg1 from "../assets/img/projects/1.png";
 import ProjectImg2 from "../assets/img/projects/2.png";
 import ProjectImg3 from "../assets/img/projects/3.png";
@@ -132,7 +129,7 @@ export default function Projects() {
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-1 bg-blue-50 rounded text-xs font-semibold bg-purple-200 "
+                    className="px-2 py-1  rounded text-xs font-semibold bg-purple-200 "
                   >
                     {tech}
                   </span>

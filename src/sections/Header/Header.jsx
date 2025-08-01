@@ -4,7 +4,7 @@ import FullButton from "../../components/FullButton.jsx";
 import HeaderImage from "../../assets/img/header-img.jpg";
 import QuotesIcon from "../../assets/svg/Quotes.jsx";
 
-import Dots from "../../assets/svg/Dots.jsx";
+import Dots from "../../assets/svg/Dots.jsx"; 
 import "./Header.css"
 export default function Header() {
   return (
@@ -43,16 +43,16 @@ export default function Header() {
             alt="office"
             className="rounded-2xl shadow-lg z-10 max-[560px]:w-4/5 max-[560px]:h-auto"
           />
-          <div className="absolute left-0 bottom-12 max-w-md p-8 flex items-center bg-white dark:bg-[#1E293B] rounded-2xl shadow-lg z-20 max-[960px]:left-5 max-[560px]:bottom-[-50px] transition-colors duration-300">
+          <div className="absolute left-0 bottom-12 max-w-md p-8 flex items-center bg-white rounded-2xl shadow-lg z-20 max-[960px]:left-5 max-[560px]:bottom-[-50px] transition-colors duration-300">
             <div className="absolute left-[-20px] top-[-10px]">
               <QuotesIcon />
             </div>
             <div>
-              <p className="text-base text-slate-700 dark:text-slate-200 italic mb-2 transition-colors duration-300">
+              <p className="text-base text-slate-700italic mb-2 transition-colors duration-300">
                 Friends, such as we desire, are dreams and fables. Friendship
                 demands the ability to do without it.
               </p>
-              <p className="text-sm text-cyan-600 dark:text-cyan-400 text-right mt-2 transition-colors duration-300">
+              <p className="text-sm text-cyan-600 text-right mt-2 transition-colors duration-300">
                 Ralph Waldo Emerson
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function Header() {
             <Dots />
           </div>
         </div>
-        <div className="bg-slate-100 dark:bg-[#23232a] w-1/3 h-[700px] absolute top-0 right-0 z-0 max-[960px]:hidden transition-colors duration-300" />
+        <div className="bg-slate-100 w-1/3 h-[700px] absolute top-0 right-0 z-0 max-[960px]:hidden transition-colors duration-300" />
       </div>
     </section>
   );

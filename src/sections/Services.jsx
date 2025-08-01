@@ -8,7 +8,7 @@ import FullButton from "../components/FullButton";
 export default function Services() {
   return (
     <section id="services" className="w-full">
-      <div className="bg-white dark:bg-[#ebecf0] py-12 transition-colors duration-300">
+      <div className="bg-slate-100 py-12 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <ClientsSlider />
         </div>
@@ -65,10 +65,9 @@ export default function Services() {
                 key={i}
                 className="flex p-5 hover:scale-[1.05] duration-300 rounded-2xl hover:shadow-2xl transition-shadow shadow-sm"
               >
-                  <div className="z-10">
-                    <ServiceBox {...service} />
-                  </div>
-                
+                <div className="z-10">
+                  <ServiceBox {...service} />
+                </div>
               </div>
             ))}
           </div>

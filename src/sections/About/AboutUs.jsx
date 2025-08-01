@@ -1,13 +1,13 @@
 import React from "react";
 import FullButton from "../../components/FullButton";
-import AddImage1 from "../../assets/img/add/1.png";
-import AddImage2 from "../../assets/img/add/2.png";
-import AddImage3 from "../../assets/img/add/3.png";
-import AddImage4 from "../../assets/img/add/4.png";
+import AddImage1 from "../../assets/img/add/1.jpg";
+import AddImage2 from "../../assets/img/add/2.jpg";
+// import AddImage3 from "../../assets/img/add/3.png";
+import AddImage4 from "../../assets/img/add/4.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="bg-white mt-8 py-16 transition-colors duration-300">
+    <div id="About Us" className="bg-white mt-8 py-16 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-20">
           <div className="w-full md:w-1/2 text-left">
@@ -45,30 +45,30 @@ const AboutUs = () => {
           <div className="w-full md:w-1/2 relative">
             <div className="w-full">
               <div className="flex justify-center md:justify-start gap-8 mb-4 mt-8">
-                <div className="w-[40%]">
+                <div className="w-[50%]">
                   <img
                     src={AddImage1}
                     alt="office"
-                    className="rounded-2xl shadow-lg"
+                    className="rounded-2xl shadow-lg h-75"
                   />
                 </div>
-                <div className="w-[30%]">
+                <div className="w-[40%]">
                   <img
                     src={AddImage2}
                     alt="office"
-                    className="rounded-2xl shadow-lg"
+                    className="rounded-2xl shadow-lg h-65"
                   />
                 </div>
               </div>
-              <div className="flex justify-center md:justify-start gap-4">
-                <div className="w-[20%] ml-[40%]">
+              <div className="flex justify-center md:justify-end gap-4">
+                {/* <div className="w-[20%] ml-[40%]">
                   <img
                     src={AddImage3}
                     alt="office"
                     className="rounded-2xl shadow-lg"
                   />
-                </div>
-                <div className="w-[30%]">
+                </div> */}
+                <div className="w-75">
                   <img
                     src={AddImage4}
                     alt="office"

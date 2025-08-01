@@ -1,7 +1,4 @@
 import React, { useRef, useState } from "react";
-import ContactImg1 from "../assets/img/contact-1.png";
-import ContactImg2 from "../assets/img/contact-2.png";
-import ContactImg3 from "../assets/img/contact-3.png";
 import emailjs from "emailjs-com";
 
 export default function Contact() {
@@ -104,21 +101,6 @@ export default function Contact() {
                 {sent && <div className="text-green-600 mt-4 text-center">Message sent successfully!</div>}
                 {error && <div className="text-red-600 mt-4 text-center">{error}</div>}
               </form>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
-              <div className="flexNullCenter flexColumn w-1/2">
-                <div className="max-w-[180px] self-end my-[10px] mr-[30px]">
-                  <img src={ContactImg1} alt="office" className="radius6" />
-                </div>
-                <div className="max-w-[180px] self-end my-[10px] mr-[30px]">
-                  <img src={ContactImg2} alt="office" className="radius6" />
-                </div>
-              </div>
-              <div className="w-1/2">
-                <div className="mt-[100px]">
-                  <img src={ContactImg3} alt="office" className="radius6" />
-                </div>
-              </div>
             </div>
           </div>
         </div>

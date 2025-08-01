@@ -2,36 +2,38 @@ import React, { useState } from "react";
 import BlogBox from "../components/BlogBox";
 import FullButton from "../components/FullButton";
 import TestimonialSlider from "../components/TestimonialSlider";
-import BlogImg1 from "../assets/img/contact-1.png";
-import BlogImg2 from "../assets/img/contact-2.png";
-import BlogImg3 from "../assets/img/contact-3.png";
+import BlogImg1 from "../assets/img/image.png";
+import BlogImg2 from "../assets/img/image2.webp";
+import BlogImg3 from "../assets/img/image3.webp";
 import { Link } from "react-router-dom";
 
 const allBlogPosts = [
   {
     id: 1,
-    title: "How to Build Lightning-Fast React Sites",
-    text: "Learn the secrets to optimizing your React apps for speed and performance, from code splitting to lazy loading and more.",
-    tag: "Web Development",
-    author: "Luke Skywalker, 2 days ago",
+    title:
+      "Figma’s stock soared in its highly anticipated IPO, market cap instantly hit $45B",
+    text: "Figma began trading on the New York Stock Exchange on Thursday after a long delay. It soared so quickly that trading was halted for a short time due to market volatility.....",
+    tag: "Start Up",
+    author: "Julie Bort, July 31,2025",
     image: BlogImg1,
     link: "/blog/1",
   },
   {
     id: 2,
-    title: "UI/UX Design Principles for 2025",
-    text: "Discover the latest trends and timeless rules for creating beautiful, user-friendly interfaces in 2025.",
-    tag: "UI/UX Design",
-    author: "Leia Organa, 1 week ago",
+    title:
+      "Hackers stole Social Security numbers during Allianz Life cyberattack",
+    text: "Hackers who breached U.S. insurance giant Allianz Life earlier this month stole reams of customer Social Security numbers, according to notifications...",
+    tag: "Security",
+    author: "Zack Whittaker 11:00 AM PDT · July 30, 2025",
     image: BlogImg2,
     link: "/blog/2",
   },
   {
     id: 3,
     title: "Branding with Graphics: A Modern Guide",
-    text: "Explore how modern brands use graphics and visual storytelling to stand out in a crowded market.",
-    tag: "Graphics Design",
-    author: "Han Solo, 3 days ago",
+    text: "Google has backed STAN, an Indian social gaming platform that connects gamers with creators, communities, and publishers....",
+    tag: "Gaming",
+    author: "Jagmeet Singh 10:05 AM PDT · August 1, 2025",
     image: BlogImg3,
     link: "/blog/3",
   },
@@ -43,7 +45,7 @@ export default function Blog() {
   const hasMore = visibleCount < allBlogPosts.length;
 
   return (
-    <section id="blog" className="w-full pt-8">
+    <section id="blog" className="w-full pt-10">
       <div className="bg-slate-50  transition-colors duration-300 py-12">
         <div className="container mx-auto px-4">
           <div className="mb-8 text-left md:text-center">

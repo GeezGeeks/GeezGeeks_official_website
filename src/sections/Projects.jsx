@@ -1,59 +1,33 @@
 import React, { useState } from "react";
-import ProjectImg1 from "../assets/img/projects/1.png";
-import ProjectImg2 from "../assets/img/projects/2.png";
-import ProjectImg3 from "../assets/img/projects/3.png";
-import ProjectImg4 from "../assets/img/projects/4.png";
-import ProjectImg5 from "../assets/img/projects/5.png";
-import ProjectImg6 from "../assets/img/projects/6.png";
-
+import FitnessWebsite from "../assets/img/projects/FitnessWebsite.png";
+import StudyHub from "../assets/img/projects/studyhub2.png"
 const projectsData = [
   {
-    name: "Portfolio Website",
-    description: "A personal portfolio website to showcase work and skills.",
-    technologies: ["React", "Tailwind CSS", "Vite"],
+    name: "Fitness Club Gym Website",
+    description:
+      "A Gym web site that showcases the services provided by the Gym and increase the number of customers by creating a digital presence.",
+    technologies: ["React", "Vite"],
     category: "Web development",
-    image: ProjectImg1,
-    link: "https://example.com/portfolio",
+    image: FitnessWebsite,
+    link: "https://fitnessclubgymwebsite.netlify.app/",
   },
   {
-    name: "E-commerce UI",
-    description: "Modern e-commerce UI/UX design for a fashion brand.",
-    technologies: ["Figma", "Adobe XD"],
-    category: "UI/UX Design",
-    image: ProjectImg2,
-    link: "https://example.com/ecommerce-ui",
-  },
-  {
-    name: "Brand Logo",
-    description: "Logo and branding for a startup.",
-    technologies: ["Illustrator", "Photoshop"],
-    category: "Graphics Design",
-    image: ProjectImg3,
-    link: "https://example.com/brand-logo",
-  },
-  {
-    name: "Blog Platform",
-    description: "A full-stack blog platform with authentication.",
-    technologies: ["Node.js", "Express", "MongoDB", "React"],
-    category: "Web development",
-    image: ProjectImg4,
-    link: "https://example.com/blog-platform",
-  },
-  {
-    name: "Mobile App UI",
-    description: "UI/UX design for a productivity mobile app.",
+    name: "Ethiopian University Student's collaboration and learning platform",
+    description:
+      "A collaborative platform for Ethiopian university students to share resources, collaborate on projects, and enhance their learning experience.",
     technologies: ["Figma"],
     category: "UI/UX Design",
-    image: ProjectImg5,
-    link: "https://example.com/mobile-app-ui",
+    image: StudyHub,
+    link: "https://www.figma.com/proto/QVUtmws7BL7LYN3ZbPkLzq/E-hub-for-University-Students-Across-Ethiopia?node-id=1-60&starting-point-node-id=2343%3A366&t=jOBX5VB1wxgsmhAv-1",
   },
   {
-    name: "Flyer Design",
-    description: "Promotional flyer for an event.",
-    technologies: ["Photoshop"],
-    category: "Graphics Design",
-    image: ProjectImg6,
-    link: "https://example.com/flyer-design",
+    name: "Full Stack Ecommerce platform",
+    description:
+      "A dynamic e-commerce platform featuring a user-friendly interface, secure payment options, and product filtering.",
+    technologies: ["React","Node Js", "My SQL", "Tailwind CSS"],
+    category: "Web development",
+    // image: Ecomerce,
+    link: "",
   },
 ];
 
@@ -64,8 +38,8 @@ export default function Projects() {
   const categories = [
     "ALL",
     "Web development",
-    "UI/UX Design",
-    "Graphics Design",
+    "UI/UX Design"
+
   ];
   const filteredProjects =
     filter === "ALL"

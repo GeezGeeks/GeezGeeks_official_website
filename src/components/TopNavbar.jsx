@@ -34,7 +34,7 @@ export default function TopNavbar() {
             <BurgerIcon />
           </button>
           <ul className="flexCenter hidden md:flex">
-            {["home", "services", "projects", "blog", "contact"].map(
+            {["home", "services","About Us", "projects", "blog", "contact"].map(
               (section) => (
                 <li key={section} className="semiBold font18 pointer">
                   <Link

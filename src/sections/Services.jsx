@@ -2,7 +2,6 @@ import React from "react";
 import { scroller } from "react-scroll";
 import ClientsSlider from "../components/ClientsSlider";
 import ServiceBox from "../components/ServiceBox";
-import FullButton from "../components/FullButton";
 
 
 export default function Services() {

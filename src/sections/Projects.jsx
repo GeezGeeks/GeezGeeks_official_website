@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import OptimizedImage from "../components/OptimizedImage.jsx";
 import FitnessWebsite from "../assets/img/projects/FitnessWebsite.png";
-import StudyHub from "../assets/img/projects/studyhub2.png"
+import StudyHub from "../assets/img/projects/studyhub2.png";
 const projectsData = [
   {
     name: "Fitness Club Gym Website",
@@ -24,7 +25,7 @@ const projectsData = [
     name: "Full Stack Ecommerce platform",
     description:
       "A dynamic e-commerce platform featuring a user-friendly interface, secure payment options, and product filtering.",
-    technologies: ["React","Node Js", "My SQL", "Tailwind CSS"],
+    technologies: ["React", "Node Js", "My SQL", "Tailwind CSS"],
     category: "Web development",
     // image: Ecomerce,
     link: "",
@@ -35,12 +36,7 @@ export default function Projects() {
   const [filter, setFilter] = useState("ALL");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = [
-    "ALL",
-    "Web development",
-    "UI/UX Design"
-
-  ];
+  const categories = ["ALL", "Web development", "UI/UX Design"];
   const filteredProjects =
     filter === "ALL"
       ? projectsData
@@ -88,11 +84,14 @@ export default function Projects() {
               className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-600 relative"
               onClick={() => setSelectedProject(project)}
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                className="rounded-lg w-full h-40 object-cover mb-4 shadow"
-              />
+              {project.image && (
+                <OptimizedImage
+                  src={project.image}
+                  alt={project.name}
+                  className="rounded-lg w-full h-40 object-cover mb-4 shadow"
+                  loading="lazy"
+                />
+              )}
               <h3 className="text-xl font-bold mb-2 text-center text-slate-800">
                 {project.name}
               </h3>

@@ -1,6 +1,7 @@
 import React from "react";
 import { scroller } from "react-scroll";
 import FullButton from "../../components/FullButton.jsx";
+import OptimizedImage from "../../components/OptimizedImage.jsx";
 import HeaderImage from "../../assets/img/header-img.jpg";
 import QuotesIcon from "../../assets/svg/Quotes.jsx";
 import Dots from "../../assets/svg/Dots.jsx";
@@ -41,7 +42,7 @@ export default function Header() {
 
       <div className="w-1/2 h-full relative max-[960px]:w-full max-[960px]:order-1 max-[960px]:mt-8">
         <div className="flex justify-end relative z-10 max-[960px]:justify-center">
-          <img
+          <OptimizedImage
             src={HeaderImage}
             alt="GeezGeeks digital agency office workspace showing web development and design services"
             className="rounded-2xl shadow-lg z-10 max-[560px]:w-4/5 max-[560px]:h-auto"

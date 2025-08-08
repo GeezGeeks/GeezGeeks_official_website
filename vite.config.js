@@ -11,10 +11,21 @@ export default defineConfig({
         manualChunks: undefined,
       },
     },
+    // Enable image optimization
+    assetsInlineLimit: 4096, // 4kb
   },
   server: {
     headers: {
       "X-Content-Type-Options": "nosniff",
     },
   },
+  // Optimize images
+  assetsInclude: [
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.gif",
+    "**/*.svg",
+    "**/*.webp",
+  ],
 });

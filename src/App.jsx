@@ -1,19 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import Landing from "./pages/Landing";
 import BlogDetail from "./pages/BlogDetail";
+import SEO from "./components/SEO";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <SEO />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
 
 export default App;
-

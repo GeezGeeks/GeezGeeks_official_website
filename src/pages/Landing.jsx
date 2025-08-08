@@ -7,7 +7,7 @@ import Projects from "../sections/Projects";
 import Blog from "../sections/Blog";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
-import AboutUs from "../sections/About/aboutUs.jsx";
+import AboutUs from "../sections/About/AboutUs.jsx";
 
 export default function Landing() {
   return (
